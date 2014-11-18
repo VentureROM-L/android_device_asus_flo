@@ -19,7 +19,14 @@
 #
 # Everything in this directory will become public
 
-TARGET_PREBUILT_KERNEL := device/asus/flo/kernel
+#TARGET_PREBUILT_KERNEL := device/asus/flo/kernel
+
+# Kernel inline build
+TARGET_KERNEL_SOURCE := kernel/asus/flo
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
+TARGET_KERNEL_CONFIG := flo_defconfig
+TARGET_VARIANT_CONFIG := flo_defconfig
+TARGET_SELINUX_CONFIG := flo_defconfig
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -112,6 +119,15 @@ PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
 	frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 	frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml
+
+# Modem debugger
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_COPY_FILES += \
+    device/asus/flo/init.flo.diag.rc.userdebug:root/init.flo.diag.rc
+else
+PRODUCT_COPY_FILES += \
+    device/asus/flo/init.flo.diag.rc.user:root/init.flo.diag.rc
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.opengles.version=196608
