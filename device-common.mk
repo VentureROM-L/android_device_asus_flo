@@ -19,8 +19,6 @@
 #
 # Everything in this directory will become public
 
-#TARGET_PREBUILT_KERNEL := device/asus/flo/kernel
-
 # Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/asus/flo
 TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
