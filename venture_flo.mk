@@ -21,10 +21,10 @@
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
-# Inherit from our custom product configuration 
-$(call inherit-product, vendor/du/config/common_tablet.mk)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/venture/config/common_tablet.mk)
 
-PRODUCT_NAME := du_flo
+PRODUCT_NAME := venture_flo
 PRODUCT_DEVICE := flo
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := Nexus 7 2013
