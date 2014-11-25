@@ -19,12 +19,14 @@
 #
 # Everything in this directory will become public
 
-# Kernel inline build
-TARGET_KERNEL_SOURCE := kernel/asus/flo
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7
-TARGET_KERNEL_CONFIG := flo_defconfig
-TARGET_VARIANT_CONFIG := flo_defconfig
-TARGET_SELINUX_CONFIG := flo_defconfig
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/asus/flo-kernel/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
+
+PRODUCT_COPY_FILES := \
+	$(LOCAL_KERNEL):kernel
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so

@@ -1,8 +1,0 @@
-[
-  {
-    "remote":       "du",
-    "repository":   "android_kernel_asus_flo",
-    "target_path":  "kernel/asus/flo",
-    "revision":     "lollipop"
-  }
-]

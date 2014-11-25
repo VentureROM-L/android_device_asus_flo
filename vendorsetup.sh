@@ -14,7 +14,5 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_flo.mk \
-    $(LOCAL_DIR)/full_flo.mk \
-    $(LOCAL_DIR)/venture_flo.mk
+add_lunch_combo aosp_flo-userdebug
+add_lunch_combo venture_flo-userdebug
