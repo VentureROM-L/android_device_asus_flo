@@ -1,2 +1,15 @@
 [
+    {
+        "remote": "venture",
+        "repository": "android_kernel_asus_flo",
+        "target_path": "kernel/asus/flo",
+        "revision": "lollipop"
+    },
+    {
+        "remote": "venture",
+        "repository": "android_vendor_asus",
+        "target_path": "vendor/asus",
+        "revision": "lollipop"
+    }
+][
 ]

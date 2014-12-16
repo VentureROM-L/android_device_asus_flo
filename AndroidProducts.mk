@@ -17,4 +17,4 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_flo.mk \
     $(LOCAL_DIR)/full_flo.mk \
-    $(LOCAL_DIR)/venture_flo.mk
+    $(LOCAL_DIR)/venture.mk
